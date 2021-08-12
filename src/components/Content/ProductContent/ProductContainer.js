@@ -75,7 +75,6 @@ const ProductContainer = (props) => {
                 <div className='button-container'>
                   <button
                     css={`
-                      cursor: pointer;
                       margin-right: 2rem;
                       display: inline-block;
                       text-align: center;
@@ -99,6 +98,7 @@ const ProductContainer = (props) => {
                       border: none;
                       padding-top: 9px;
                       :hover {
+                        cursor: pointer;
                         color: var(--clr-primary-5);
                         background-color: white;
                         box-shadow: 0 8px 8px rgba(0, 0, 0, 0.2);
@@ -112,6 +112,12 @@ const ProductContainer = (props) => {
                     add to cart
                   </button>
                   <ProductButtonsWrapper
+                    css={`
+                      border: none;
+                      :hover {
+                        border: none;
+                      }
+                    `}
                     to={`/products`}
                     onClick={props.products}
                   >
