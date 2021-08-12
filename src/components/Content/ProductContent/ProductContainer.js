@@ -75,6 +75,7 @@ const ProductContainer = (props) => {
                 <div className='button-container'>
                   <button
                     css={`
+                    cursor:poin
                       margin-right: 2rem;
                       display: inline-block;
                       text-align: center;
