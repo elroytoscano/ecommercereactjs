@@ -114,7 +114,7 @@ const ProductContainer = (props) => {
                   <ProductButtonsWrapper
                     css={`
                       border: none;
-                      :hover {
+                      &:hover {
                         border: none;
                       }
                     `}
