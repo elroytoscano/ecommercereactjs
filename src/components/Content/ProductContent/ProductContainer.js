@@ -73,44 +73,14 @@ const ProductContainer = (props) => {
                   quidem sunt pariatur magnam?
                 </p>
                 <div className='button-container'>
-                  <button
-                    css={`
-                      margin-right: 2rem;
-                      display: inline-block;
-                      text-align: center;
-                      transition: var(--transition);
-                      text-transform: uppercase;
-                      letter-spacing: 0.125rem;
-                      background-color: transparent;
-                      color: white;
-                      border: 1px solid white;
-                      box-shadow: 0 4px 4px rgba(0, 0, 0, 0.2);
-                      box-sizing: border-box;
-                      padding: 0.5rem 1rem;
-                      border-radius: 0.25rem;
-                      &:hover {
-                        color: var(--clr-primary-5);
-                        background-color: white;
-                        box-shadow: 0 8px 8px rgba(0, 0, 0, 0.2);
-                      }
-                      background-color: var(--clr-primary-5);
-                      color: white;
-                      border: none;
-                      padding-top: 9px;
-                      :hover {
-                        cursor: pointer;
-                        color: var(--clr-primary-5);
-                        background-color: white;
-                        box-shadow: 0 8px 8px rgba(0, 0, 0, 0.2);
-                      }
-                    `}
+                  <AddToCartBtn
                     onClick={() => {
                       props.openCart()
                       props.addToCart(product, props.cart)
                     }}
                   >
                     add to cart
-                  </button>
+                  </AddToCartBtn>
                   <ProductButtonsWrapper
                     css={`
                       border: none;
@@ -132,6 +102,28 @@ const ProductContainer = (props) => {
     </BaseWrapper>
   )
 }
+
+const AddToCartBtn = styled.button`
+  margin-right: 2rem;
+  display: inline-block;
+  text-align: center;
+  transition: var(--transition);
+  text-transform: uppercase;
+  letter-spacing: 0.125rem;
+  background-color: var(--clr-primary-5);
+  color: white;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.2);
+  box-sizing: border-box;
+  padding: 0.5rem 1rem;
+  border-radius: 0.25rem;
+  padding-top: 9px;
+  :hover {
+    cursor: pointer;
+    color: var(--clr-primary-5);
+    background-color: white;
+    box-shadow: 0 8px 8px rgba(0, 0, 0, 0.2);
+  }
+`
 
 const mapStateToProps = (state) => {
   return { currentpage: state.currentPage, cart: state.cartData.cart }
